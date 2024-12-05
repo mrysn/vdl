@@ -1,0 +1,42 @@
+
+---
+
+### **.gitignore**
+
+Add the following to `.gitignore` to exclude unnecessary files:
+
+```gitignore
+# Python
+*.pyc
+__pycache__/
+
+# Environment Variables
+.env
+
+# Logs
+*.log
+logs/
+*.out
+
+# Virtual Environment
+venv/
+
+# Docker
+*.env
+*.pid
+*.sock
+docker-compose.override.yml
+
+# Celery
+*.db
+celerybeat-schedule
+
+# macOS
+.DS_Store
+
+# IDEs
+.idea/
+.vscode/
+
+# Downloads
+downloads/
