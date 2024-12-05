@@ -1,6 +1,6 @@
 # vdl
 
-vdl is a Flask-based application that uses `yt-dlp` to download videos from various platforms. The app supports queuing downloads with Celery and Redis, allowing for concurrent downloads with customizable options.
+vdl is a Flask-based application that uses `yt-dlp` to download videos from various platforms. The app supports queuing downloads with Celery and Redis, allowing for concurrent downloads with customisable options.
 
 ## Features
 
@@ -8,7 +8,7 @@ vdl is a Flask-based application that uses `yt-dlp` to download videos from vari
 - **Subtitles**: Downloads and embeds subtitles in the video file
 - **Queue System**: Uses Celery and Redis to queue and manage multiple simultanous downloads
 - **Custom Arguments**: Allows passing additional `yt-dlp` arguments via the API / cURL commands
-- **Dockerized**: Fully containerized for easy deployment and scalability
+- **Dockerised**: Fully containerised for easy deployment and scalability
 
 ## Installation
 
@@ -70,9 +70,9 @@ cURL in one line:
 curl -X POST -H "Content-Type: application/json" -d '{"url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ","args": ["--format", "bestvideo+bestaudio"]}' http://127.0.0.1:5050/run-command
 ```
 
-## Customization
+## Customisation
 
-You can customize the application's behavior by modifying the variables in `config.py`.
+You can customise the application's behavior by modifying the variables in `config.py`.
 
 ### Default Filename Output
 
