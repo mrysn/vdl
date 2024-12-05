@@ -36,7 +36,7 @@ def normalize_url(url):
     except Exception:
         return None
 
-@app.route('/run-command', methods=['POST'])
+@app.route('/vdl', methods=['POST'])
 def queue_command():
     """
     Handles POST requests to queue yt-dlp downloads.

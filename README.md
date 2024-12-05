@@ -37,9 +37,9 @@ Access the application at http://localhost:5050.
 
 ## API Endpoints
 
-Queue a Download
+### Queue a Download
 
-Endpoint: `/run-command`
+Endpoint: `/vdl`
 Method: `POST`
 Request Body:
 ```json
@@ -63,11 +63,11 @@ curl -X POST -H "Content-Type: application/json" \
         "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
         "args": ["--format", "bestvideo+bestaudio"]
     }' \
-    http://127.0.0.1:5050/run-command
+    http://127.0.0.1:5050/vdl
 ```
 cURL in one line:
 ```bash
-curl -X POST -H "Content-Type: application/json" -d '{"url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ","args": ["--format", "bestvideo+bestaudio"]}' http://127.0.0.1:5050/run-command
+curl -X POST -H "Content-Type: application/json" -d '{"url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ","args": ["--format", "bestvideo+bestaudio"]}' http://127.0.0.1:5050/vdl
 ```
 
 ## Customisation
