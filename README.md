@@ -10,7 +10,7 @@ vdl is a Flask-based application that uses `yt-dlp` to download videos from vari
 - **Custom Arguments**: Allows passing additional `yt-dlp` arguments via the API / cURL commands
 - **Dockerised**: Fully containerised for easy deployment and scalability
 
-## Installation
+## Installation and Running
 
 ### Prerequisites
 
@@ -34,6 +34,14 @@ docker-compose up --build
 ```
 
 Access the application at http://localhost:5050.
+
+## Updating `yt-dlp`
+
+Recommended:
+- Destroy and rebuild the container
+
+Alternatively:
+- Connect to the container CLI and run `yt-dlp -U`
 
 ## API Endpoints
 
@@ -90,9 +98,18 @@ YT_DLP_DEFAULT_ARGS = [
     "--sub-format", "ttml",
     "--convert-subs", "srt",
     "--embed-subs",
+    "--compat-options", "no-keep-subs",
     "--merge-output-format", "mp4",
+    "--ignore-errors",
     "--restrict-filenames",
-    # Other arguments...
+    "--no-check-certificate",
+    "--force-ipv4",
+    "--legacy-server-connect",
+    "--convert-thumbnail", "jpg",
+    "--embed-thumbnail",
+    "--add-metadata",
+    "--download-archive", "/downloads/yt-dlp-videos-mp4-maxquality.txt",
+    "-P", "/downloads"
 ]
 ```
 
