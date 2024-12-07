@@ -4,11 +4,11 @@ Video DownLoad tool, send it URLs via API & CURL from anywhere. Concurrent downl
 
 ## Features
 
-- **Video Downloads**: Supports video downloads with `yt-dlp`
-- **Subtitles**: Downloads and embeds subtitles in the video file
+- **Video Downloads**: Utilising latest version of `yt-dlp`, pulled upon container build
+- **Subtitles**: Downloads and embeds subtitles in the video file as optionable subs
 - **Queue System**: Uses Celery and Redis to queue and manage multiple simultanous downloads
 - **Custom Arguments**: Allows passing additional `yt-dlp` arguments via the API / cURL commands
-- **Dockerised**: Fully containerised for easy deployment and scalability
+- **Containerised**: Fully containerised for easy deployment and scalability
 
 ## Installation and Running
 
