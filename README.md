@@ -1,6 +1,6 @@
 # vdl
 
-vdl is a Flask-based application that uses `yt-dlp` to download videos from various platforms. The app supports queuing downloads with Celery and Redis, allowing for concurrent downloads with customisable options.
+Video DownLoad tool, send it URLs via API & CURL from anywhere. Concurrent downloads queued with Celery and Redis, highly customisable, Python Flask-based running in a container.
 
 ## Features
 
