@@ -1,29 +1,36 @@
-version: '3.8'
+# version: '3.8'
 
 services:
-  flask-app:
+  vdl-app:
+    container_name: vdl-app
+    hostname: vdl-app
     build:
       context: .
       dockerfile: Dockerfile
     ports:
       - "${FLASK_PORT:-5050}:5050"  # Host port mapped to Flask port
     volumes:
-      - ./downloads:/downloads  # Persist downloads
+      - ./downloads:/downloads  # Persistant download location local_path:container_path
+      - ./logs:/app/logs  # Persistant logs
     depends_on:
-      - redis
+      - vdl-redis
     environment:
       - FLASK_PORT=5050
       - YT_DLP_OUTPUT_PATH=/downloads/%(title)s.%(ext)s
       - LOG_FILE=/app/app.log
       - LOG_LEVEL=INFO
-      - REDIS_URL=redis://redis:6379/0
+      - REDIS_URL=redis://vdl-redis:6379/0
 
-  redis:
+  vdl-redis:
+    container_name: vdl-redis
+    hostname: vdl-redis
     image: redis:alpine
     ports:
       - "6379:6379"
 
-  celery-worker:
+  vdl-celery-worker:
+    container_name: vdl-celery-worker
+    hostname: vdl-celery-worker
     build:
       context: .
       dockerfile: Dockerfile
@@ -31,7 +38,7 @@ services:
     volumes:
       - ./downloads:/downloads
     depends_on:
-      - redis
+      - vdl-redis
     environment:
-      - REDIS_URL=redis://redis:6379/0
+      - REDIS_URL=redis://vdl-redis:6379/0
       - YT_DLP_OUTPUT_PATH=/downloads/%(title)s.%(ext)s

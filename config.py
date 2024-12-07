@@ -40,7 +40,7 @@ FLASK_PORT = int(os.getenv('FLASK_PORT', 5050))  # Flask app port
 FLASK_HOST = os.getenv('FLASK_HOST', '0.0.0.0')  # Flask app host
 
 # Redis configuration
-REDIS_URL = os.getenv('REDIS_URL', 'redis://redis:6379/0')  # Redis broker URL
+REDIS_URL = os.getenv('REDIS_URL', 'redis://vdl-redis:6379/0')  # Redis broker URL
 
 # Celery configuration
 CELERY_BROKER_URL = REDIS_URL
